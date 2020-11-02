@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>shrink_app</title>
+        <h1>画像縮小</h1>
+    </head>
+    <body>
+ 
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+
+        <td>{{ obj.description }}</td>
+        <!--<td>{{ obj.gray_photo.url }}</td>-->
+        <td><img src="{{ obj.output.url }}" width="500" height="340"/></td>
+        <td>{{ obj.uploaded_at }}</td>
+    </body>
+</html>
